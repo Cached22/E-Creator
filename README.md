@@ -1,115 +1,83 @@
-# Auto-Gmail-Creator
+# Email Account Creation App
 
-## Summary
-Latest Open Source Bulk Auto Google Account ( Gmail ) Regiteration Bot Script 2023
+## Overview
+This application is designed to automate the process of creating bulk email accounts. It is built with Python and utilizes various libraries to interact with web pages, handle HTTP requests, and parse HTML content. The app aims to streamline the account creation process by using automated name generation and proxy management.
 
-This is the automation script for Python lovers to learn basics about automation as well as commercial for marketers.
-<a class="github-fork-ribbon right-top" href="https://github.com/ai-to-ai/Auto-Gmail-Creator/fork" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a> <img align="left" src="https://visitor-badge.laobi.icu/badge?page_id=ai-to-ai.ai-to-ai" />
+## Features
+- Automated bulk email account creation
+- Automated name generation for new accounts
+- Proxy support for account creation
+- Configurable settings for customization
+- Command-line interface (CLI) and optional graphical user interface (GUI)
+- Comprehensive logging and error handling
 
-According to [Jonathan](https://www.quora.com/profile/Jonathan-Elder)'s desription ,only about five gmail addresses can be verified on a single phone number.
+## Getting Started
 
-This script uses [sms-activate.org](https://sms-activate.org) api for phone verification and more services will be added.
+### Prerequisites
+- Python 3.x
+- Pip (Python package installer)
 
-To run the script, you don't need to download Chromedriver or Geckodriver manually. The script does it automatically with webdriver manager.
+### Installation
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-repository/email-account-creation-app.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd email-account-creation-app
+   ```
+3. Set up a virtual environment:
+   ```
+   python -m venv venv
+   ```
+4. Activate the virtual environment:
+   - On Windows:
+     ```
+     venv\Scripts\activate
+     ```
+   - On Unix or MacOS:
+     ```
+     source venv/bin/activate
+     ```
+5. Install the required dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
 
-You can customize this script to avoid getting blocked. I am also developing another script with Requests but going to keep it private since it will be blocked if I let it public.
+### Configuration
+- Copy the `.env.example` file to `.env` and fill in the necessary details.
+- Modify the `config.py` file to set up your preferred configurations.
 
-Also, Feel free to contact me if you have any project regarding Automation, Scraping, Machine Learning.
-
-## Usage
-1. Install Python 3.x.
-2. ```pip install -r requirements.txt``` 
-3. ```python app.py```
-4. 'Created.txt' will be generated for successful creation.
-5. if you already installed python packages for my previous script, I recommend to upgrade the ```webdriver-manager``` package by ```pip install webdriver-manager -U```
-
-## Customize
-### Browser [ Chrome, Firefox ]
-Switch from Chrome to Firefox by commenting 2 lines.
+### Usage
+To start the application, run the `main.py` script:
 ```
-#options = ChromeOptions()
-options = FirefoxOptions()
-
-#driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options = options, seleniumwire_options=seleniumwire_options)
-
-driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options = options, seleniumwire_options=seleniumwire_options)
-
-```
-### Manual or Automatic User info generation
-You edit the 'User.csv' with given type such as First name, Last name, Password, Birthday, Username(optional) from the second line.
-If the 5th parameter on user.csv is not passed by userBot generates username automatically adding FN + dot + LN + random 5 digits.(john.doe12345@gmail.com)
-Thanks to [BourneXu](https://github.com/BourneXu/AutoCreateGmailAccount), Script generates random popular usernames.
-You can set this variant as "True" to use this functionality to automate generation.
-```
-AUTO_GENERATE_UERINFO = True
-```
-### Proxy
-If you want to use socks proxy, please remove comment theses lines.
-[Free Proxy list](http://free-proxy.cz/en/proxylist/country/all/socks5/ping/all/2) is here
-```
-    SOCKS_PROXY = "socks5://user:pass@ip:port"
+python email_creator/main.py
 ```
 
-### Headless or With UI (Optional)
+For CLI usage, you can use the `cli.py` module:
 ```
-    options.add_argument('--headless')
+python ui/cli.py
 ```
 
-### Profile (Optional)
-You can add your own profile if you want by specifying the path.
+If GUI is implemented, you can start it with:
 ```
-    options.add_argument("--incognito")
-    options.add_argument(r"--user-data-dir=C:\\Users\\Username\\AppData\\Local\\Google\\Chrome\\User Data")
-    options.add_argument(r'--profile-directory=ProfileName')
+python ui/gui.py
 ```
-## To-Do
-Try to simulate user's mouse action wity pyautogui and adding cookie, recovery email, more sms services such as Durian, 5sims.
-To bypass bot-detection, I am all ears to hear from you.
 
-## Images
-- Running
-    ![auto-gmail-creator-leostech](./data/images/auto-gmail-creator-leostech.jpg)
+## Testing
+To run the tests, execute the following command:
+```
+pytest
+```
 
-- Edit user.csv
+## Documentation
+For detailed setup and usage instructions, please refer to the `docs/setup_instructions.md` and `docs/usage_instructions.md` files.
 
-    With Notepad
-    ![edit-user-notepad](./data/images/user-notepad-leostech.jpg)
+## Contributing
+If you wish to contribute to this project, please read the `docs/contribution_guidelines.md` for the contribution process.
 
-    With Excel
-    ![edit-user-excel](./data/images/user-excel-leostech.jpg)
+## License
+This project is licensed under the MIT License - see the `LICENSE` file for details.
 
-- Bot will create chrome browser repeatedly for each gmail.
-    ![auto-gmail-create-leostech](./data/images/gmail-create-leostech.jpg)
-
-- You can visit [sms-activate.org](https://sms-activate.org) to see it's apis.
-    ![sms-activate](./data/images/sms-leostech.jpg)
-
-- To see the country code, you can hit here.
-    ![auto-gmail-creator-leostech](./data/images/country-code-leostech.jpg)
-    ![auto-gmail-creator-leostech](./data/images/country-table-leostech.jpg)
-
-## Email
-
-tr.soft.engineer@gmail.com
-
-## Telegram
-
-https://t.me/leoshabit
-
-## Discord
-
-leoshabit
-
-## Skype
-
-https://join.skype.com/invite/H6S0RFA69GNK
-
-
-## Github
-
-https://github.com/ai-to-ai
-
-## Phone
-
-+13035365033
-
+## Acknowledgments
+This project is for educational purposes and should be used in a controlled environment. Please adhere to the terms of service of the email service providers.

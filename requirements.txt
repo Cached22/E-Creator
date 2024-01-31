@@ -1,7 +1,9 @@
-fake_useragent
-fp
-free_proxy
-requests
-selenium
-selenium_wire
-webdriver_manager
+selenium==3.141.0
+requests==2.25.1
+beautifulsoup4==4.9.3
+lxml==4.6.2
+python-dotenv==0.15.0
+pytest==6.2.2
+tkinter; python_version >= "3.1"
+logging
+faker==8.1.1
